@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko" style="height: 100%; margin: 0; padding: 0;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>챗봇 테스트</title>
+    <link rel="stylesheet" href="./dist/chatbot-embed.css">
+</head>
+<body style="height: 100vh; height: -webkit-fill-available; margin: 0; padding: 0;">
+    
+
+<!-- 자동 초기화 -->
+    
+    <!-- 챗봇 스크립트 -->
+    <!-- <script type="module" src="/src/main.tsx"></script> -->
+
+    <!-- 챗봇 스크립트 번들링 -->
+    <script src="./dist/chatbot-embed.iife.js"></script>
+
+<!-- 수동 초기화 -->
+<script>
+    window.addEventListener('message', (event) => {
+      if (event.data && event.data.eventName === 'opsbot-init') {
+        console.log('✅ opsbot-init 수신, 챗봇 띄우기!');
+        window.initChatBot();
+      }
+    });
+    </script>
+
+
+</body>
+</html> 
